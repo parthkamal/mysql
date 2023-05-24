@@ -1,6 +1,5 @@
 mysql commands; 
 
-
 show databases; ---> list the databases; 
 create database [db_name]; --> to create a database; 
 drop database [db_name]; ---> to delete a database ; 
@@ -23,3 +22,29 @@ truncate table [table_name]; ---> used to truncate the table;
 insert into [table_name](id,name,city) values(12,'durgesh','delhi'); ---> for insert a new values (specifying a order); 
 
 insert into [table_name] values(12,'ankit','kanpur'); --> for inserting new table row (without specfying the order);
+alter table [table_name] add col1; --> used to add a new column
+update [table_name] set col1='value' where col2='value2'; ---> update the column values;
+delete from [table_name] where (condition);
+select * from [table_name]; ---> show all rows from table
+select * from [table_name] where (condition); -------> select all rows where some conditions are met;
+
+select col1,col2,col3 from [table_name];--> specify the columns from the table to be shown;
+we can also use and or clauses in defining the condition of the sql query; 
+select * from student where id between 23 and 234 ; 
+select * from student limit 4 ; __> gives the top 4 results; 
+select * from student limit 3 offset 2; ---> phle 2 chhodke aage ke 3 results; 
+select * from student order by id desc limit 2; --> gives the bottom 2 results; 
+select * from student where name like 'a%'; --> all the rows where name starts with a;
+select * from student where name like '%t'; ---> all the rows where name ends with '%t';
+select sum(id) total_id_sum from student;
+
+
+
+
+foreign keys and joins ---> 
+
+
+create foreign keys --> 
+
+create table laptops (lid int primary key, lmodel varchar(20), studentId int, foreign key (studentId) references student(id); --> creating a foreign key column in table laptops refering from student id ; 
+select student.name, student, laptops.model from student innder join laptops on student.id = laptops.studentId;
