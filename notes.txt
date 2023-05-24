@@ -48,3 +48,55 @@ create foreign keys -->
 
 create table laptops (lid int primary key, lmodel varchar(20), studentId int, foreign key (studentId) references student(id); --> creating a foreign key column in table laptops refering from student id ; 
 select student.name, student, laptops.model from student innder join laptops on student.id = laptops.studentId;
+
+
+
+
+
+
+//mysql basic command
+
+
+Difference between mysql sever and mysql client - 
+
+Mysql server - it is a server program. It is used to manage the connection with database located locally or disk (local). 
+
+Mysql client - it is like a command line shell , which communicates like a client to mysql server.
+
+
+Database - database is a software which stores data in an organized manner. So it becomes easy to manage data
+
+Mysql - popular database software which is used to handle data in an relational manner. ( it is like a example of database ) other examples like mongodb
+
+Relational manner - in the form of tables, rows, and columns.
+
+Relation between tables can be established by using foreign keys. 
+
+///  How mysql works? 
+
+Whenever we install mysql from official website , it automatically installs the database server (mysql server) and the client (mysql client) (command line shell). Mysql works like a client server architectures , in which client can be a shell or a gui(workwench, phpmyadmin) through which we can execute the query . which is handled by the database server. 
+
+
+On installing mysql what i found. 
+
+Configuration directory for mysql was /etc/mysql/
+Inside this -> my.cnf is the main configuration file ( which includes the location of client and mysql server configuration file. 
+
+/etc/mysql/mysql.conf.d/mysql.cnf  -> configuration file for mysql client (command line shell)
+
+/etc/mysql/mysql.conf.d/mysqld.cnf -> configuration file for mysql server (database server)
+
+/var/log/mysql/error.log -> log file for any error
+
+/var/lib/mysql -> mysql data directory
+
+
+//uninstalling mysql complete from linux
+
+To start the sql server - > systemctl start mysql 
+Root login - > sudo mysql and then enter password
+
+
+From root login you will enter the sql shell
+
+
