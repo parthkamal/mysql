@@ -1,0 +1,25 @@
+mysql commands; 
+
+
+show databases; ---> list the databases; 
+create database [db_name]; --> to create a database; 
+drop database [db_name]; ---> to delete a database ; 
+use [db_name]; -- > to switch to a database ; 
+select currentuser(); --->shows the current user; 
+select database(); ---> shows the current database in which you are in; 
+create table [table_name] (col1, col2, col3, col4....);
+
+
+for example, let's create a user table ; 
+
+create table user (id int(11) primary_key, name varchar(100) not null, city varchar(50));
+
+
+show tables; ---> will show the tables present inside the database.
+desc [table_name]; --> will give details about the table
+drop table [table_name]; --> will delete the complete table
+alter table [old table name] rename to [new table name]; --> for renaming a table
+truncate table [table_name]; ---> used to truncate the table; 
+insert into [table_name](id,name,city) values(12,'durgesh','delhi'); ---> for insert a new values (specifying a order); 
+
+insert into [table_name] values(12,'ankit','kanpur'); --> for inserting new table row (without specfying the order);
